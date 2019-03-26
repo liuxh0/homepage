@@ -1,0 +1,38 @@
+div.heart-with-count {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.heart-with-count div.heart {
+  position: relative;
+
+  *:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  i.material-icons {
+    font-size: 36px;
+    cursor: default;
+    transition: color 500ms;
+
+    &.empty:hover, &.full {
+      color: red;
+    }
+
+    &.full {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 500ms;
+      &.visible { opacity: 1; }
+    }
+  }
+}
+
+div.heart-with-count span.count {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
